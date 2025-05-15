@@ -22,7 +22,6 @@ public class ElevatorController {
         for(int i = 1; i <= numberofElevators; i++){
             elevators.add(new Elevator(i));
         }
-
         for(int i = 1; i < numberofFloors; i++){
             floors.add(new Floor(i));
         }

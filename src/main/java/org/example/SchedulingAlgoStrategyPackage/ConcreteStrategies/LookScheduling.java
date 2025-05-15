@@ -1,4 +1,11 @@
 package org.example.SchedulingAlgoStrategyPackage.ConcreteStrategies;
 
-public class LookScheduling {
+import org.example.SchedulingAlgoStrategyPackage.SchedulingStrategy;
+import org.example.UtilityClasses.Elevator;
+
+public class LookScheduling implements SchedulingStrategy {
+    @Override
+    public int getNextStop(Elevator elevator) {
+        return 0;
+    }
 }
