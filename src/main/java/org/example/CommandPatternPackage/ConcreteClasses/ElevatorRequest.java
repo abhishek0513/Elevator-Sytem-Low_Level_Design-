@@ -12,7 +12,7 @@ public class ElevatorRequest implements ElevatorCommand {
     private  boolean isInternalRequest;
 
 
-    public ElevatorRequest(int elevatorId, int floor, Directions requestDirection, boolean isInternalRequest) {
+    public ElevatorRequest(int elevatorId, int floor,  boolean isInternalRequest, Directions requestDirection) {
         this.elevatorId = elevatorId;
         this.floor = floor;
         this.requestDirection = requestDirection;

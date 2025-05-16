@@ -49,6 +49,24 @@ public class Elevator {
         }
     }
 
+    public void addRequest(ElevatorRequest elevatorRequest) {
+        // Avoid duplicate requests
+        if (!requests.contains(elevatorRequest)) {
+            requests.add(elevatorRequest);
+        }
+
+        int requestedFloor = elevatorRequest.getFloor();
+        // If elevator is idle, determine direction and start moving
+        if (elevatorState == ElevatorState.IDLE && !requests.isEmpty()) {
+            if (requestedFloor > currentFloor) {
+                directions = Directions.UP;
+            } else if (requestedFloor < currentFloor) {
+                directions = Directions.DOWN;
+            }
+            setState(ElevatorState.MOVING);
+        }
+    }
+
     public void setState(ElevatorState newState) {
         this.elevatorState = newState;
         notifyStateChange(newState);
